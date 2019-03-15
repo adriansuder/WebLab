@@ -1,0 +1,28 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img *ngIf="czyPokazacMema" width="300" alt="Angular Logo" [src]="imgURL">
+</div>
+<button (click)="wezPokazMema()">Ejj, pokaż mema</button>
+<h2>
+  Świat wybuchnie za {{ licznik }}
+</h2>
+<button (click)="onBtnClick($event)">Wybuchnij świat</button>
+<h3>
+  {{ inputText }}
+</h3>
+<input type="text" (input)=onInputChange($event) #userInput>
+<h3>
+  Długość wpisanego ciągu znaków to: {{ inputTextLength }}
+</h3>
+<app-color-box [kolor]="inputText"></app-color-box>
+<button (click)="onPokazDlugoscClick(userInput.value)">Pokaż długość ciągu znaków</button>
+<div [ngSwitch]="a">
+  <p *ngSwitchCase="'black'" style="background: black">akshdkajhdjkh</p>
+  <p *ngSwitchCase="'red'" style="background: red">akshdkajhdjkh</p>
+</div>
+<div *ngFor="let i of imgs">
+  <img width="300" alt="Angular Logo" [src]="i">
+</div>
