@@ -1,0 +1,15 @@
+<form [formGroup]="newFilm">
+  <mat-form-field>
+    <input matInput type="text" formControlName="title" placeholder="Title">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" formControlName="director" placeholder="Director">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" formControlName="year" placeholder="Year">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput type="text" formControlName="poster" placeholder="Poster URL">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onBtnNewFilmClick()" [disabled]="newFilm.invalid">Add new film</button>
+</form>
