@@ -1,0 +1,21 @@
+<div id="form">
+  <form [formGroup]="newFilm">
+    <mat-form-field>
+      <input matInput type="text" formControlName="title" placeholder="Tytuł filmu">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput type="text" formControlName="description" placeholder="Opis filmu"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" formControlName="rating" placeholder="Ocena">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" formControlName="poster" placeholder="Plakat">
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="button" (click)="onDodajNowyFilmClick()" [disabled]="newFilm.invalid">Dodaj nowy film</button>
+  </form>
+  <pre>
+    {{ newFilm.value | json }}
+  </pre>
+</div>
