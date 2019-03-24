@@ -1,0 +1,35 @@
+<div id="form">
+  <form [formGroup]="newFilm">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Tytuł" formControlName="title" />
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Opis" formControlName="description"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Ocena"
+        formControlName="rating"
+      />
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput
+        type="text"
+        placeholder="Plakat (url)"
+        formControlName="poster"
+      />
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      type="button"
+      (click)="onDodajFilmClick()"
+      [disabled]="newFilm.invalid"
+    >
+      Dodaj film
+    </button>
+  </form>
+</div>
