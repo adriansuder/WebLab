@@ -7,11 +7,13 @@ import { NewFilmComponent } from './new-film/new-film.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatInputModule} from '@angular/material';
+import { FilmDetailComponent } from './film-detail/film-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NewFilmComponent
+    NewFilmComponent,
+    FilmDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FilmService } from '../film.service';
 
 @Component({
   selector: 'app-new-film',
@@ -9,7 +10,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class NewFilmComponent implements OnInit {
   newFilm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private filmService: FilmService) { }
 
   ngOnInit() {
     this.newFilm = this.fb.group({
@@ -22,6 +25,11 @@ export class NewFilmComponent implements OnInit {
 
   onBtnNewFilmClick() {
     console.log(this.newFilm);
+    const film = {
+      id: (Math.random()*100000).toFixed(),
+      ...this.newFilm.value
+    }
+    this.filmService.addFilm(film);
   }
 
 }

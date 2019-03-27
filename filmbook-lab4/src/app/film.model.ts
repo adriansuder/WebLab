@@ -1,4 +1,5 @@
 class Film {
+  id: string;
   title: string;
   director: string;
   year: string;
