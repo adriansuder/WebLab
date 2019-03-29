@@ -1,3 +1,4 @@
+import { FilmService } from './../film.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -9,7 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class NewFilmComponent implements OnInit {
   nowyFilm: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private filmService: FilmService) { }
 
   ngOnInit() {
     this.nowyFilm = this.fb.group({
@@ -23,6 +26,11 @@ export class NewFilmComponent implements OnInit {
   }
   onBtnSubmitClick() {
     console.log(this.nowyFilm);
+    const film: Film = {
+      id: (Math.random() * 100000).toFixed(),
+      ...this.nowyFilm.value
+    };
+    this.filmService.addFilm(film);
   }
 
 }
