@@ -1,0 +1,10 @@
+<!-- TODO: dodaj materialsa -->
+<label for="film">Podaj nazwę filmu:</label>
+<input id="film" type="text" (input)="szukajFilmu($event)">
+<div id="searchResults">
+  <div *ngFor="let movie of (movieList$ | async)?.results">
+    <h2>{{ movie.title}}</h2>
+    <div>{{ movie.overview }}</div> 
+    <div>{{ movie.poster_path }} </div>
+  </div>
+</div>
