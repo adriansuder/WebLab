@@ -1,0 +1,24 @@
+<h1>Nowy film</h1>
+<div id="new-film">
+  <form [formGroup]="newMovie">
+    <mat-form-field>
+      <input matInput placeholder="Tytuł" formControlName="title">
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput placeholder="Opis" formControlName="overview"></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Ocena" formControlName="rating">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Rok produkcji" formControlName="year">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Reżyseria" formControlName="director">
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Plakat (url)" formControlName="poster_path">
+    </mat-form-field>
+    <button mat-raised-button type="buton" color="primary" (click)="onNewMovieClick()">Dodaj film</button>
+  </form>
+</div>
